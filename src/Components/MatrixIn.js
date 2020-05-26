@@ -2,22 +2,22 @@ import React, { Component } from 'react'
 
 export default class MatrixIn extends Component {
     render() {
-        let matrix = []
+        let table = []
         for (let i = 0; i < this.props.n; i++) {
             let row = []
-            let sign = ''
             for (let j = 0; j < this.props.n; j++) {
                 
                 row[j] = <td>
-                    <label htmlFor={`a${i}-${j}`}>{`\`${sign}x_(${i}*${j})*\``}</label>
-                    <input type="number" text={`a${i}-${j}`} id={`a${i}-${j}`} step="any"/>
+                    <input type="number" text={`${this.props.tag}-${i}-${j}`} id={`${this.props.tag}-${i}-${j}`} step="any"/>
                 </td>
-                sign = '+'
             }
-        matrix[i] = <tr>{row}</tr>
+        table[i] = <tr>{row}</tr>
         }
-        return <table>
-            {matrix}
-        </table>
+        return <div>
+            <p>{this.props.tag} = </p>
+            <table>
+                {table}
+            </table>
+        </div>
     }
 }
