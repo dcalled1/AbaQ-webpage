@@ -8,7 +8,7 @@ export default class MatrixOut extends Component {
             for (let j = 0; j < this.props.n; j++) {
                 
                 row[j] = <td>
-                    <p>{this.props.matrix[i][j]}</p>
+                    <p>{this.props.matrix[i * this.props.n + j]}</p>
                 </td>
             }
         table[i] = <tr>{row}</tr>
